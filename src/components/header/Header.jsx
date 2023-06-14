@@ -1,18 +1,16 @@
 import React from 'react';
+import styles from './Header.module.scss';
 
 export default function Header() {
   return (
     <header>
       <nav>
-        <ul style={{
-          display: 'flex', gap: '3%', fontSize: '12px', alignItems: 'center', justifyContent: 'center', width: '100%', border: '1px solid black', height: '60px', listStyleType: 'none',
-        }}
-        >
+        <ul className={styles.container}>
           <li>Приглашение</li>
           <li>О нас</li>
           <li>F.A.Q.</li>
           <li>Опрос</li>
-          <li>Программа дня</li>
+          <li>Программа</li>
           <li>Место</li>
         </ul>
       </nav>
