@@ -32,34 +32,34 @@ function Countdown({ targetDate }) {
   return (
     <div className={styles.container}>
       <div className={styles.date}>
-        <span>
+        <span className={styles.days}>
           {timeLeft.days}
         </span>
-        <span>
+        <span className={styles.text}>
           дней
         </span>
       </div>
       <div className={styles.date}>
-        <span>
+        <span className={styles.days}>
           {timeLeft.hours}
         </span>
-        <span>
+        <span className={styles.text}>
           часов
         </span>
       </div>
       <div className={styles.date}>
-        <span>
+        <span className={styles.days}>
           {timeLeft.minutes}
         </span>
-        <span>
+        <span className={styles.text}>
           минут
         </span>
       </div>
       <div className={styles.date}>
-        <span>
+        <span className={styles.days}>
           {timeLeft.seconds}
         </span>
-        <span>
+        <span className={styles.text}>
           секунд
         </span>
       </div>

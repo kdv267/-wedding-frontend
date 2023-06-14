@@ -21,4 +21,24 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+    color: rgb(7, 57, 7);
+}
+
+.date {
+    color: rgb(7, 57, 7);
+}
+
+.countdown {
+    bottom: 0px; 
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
