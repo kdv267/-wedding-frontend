@@ -1,40 +1,43 @@
 import React from 'react';
+import styles from './Questions.module.scss';
 
 export default function Questions({ questionsRef }) {
   return (
     <div
-      style={{
-        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3%', height: '100vh', border: '1px solid black',
-      }}
+      className={styles.container}
       ref={questionsRef}
     >
-      <h2>ОТВЕЧАЕМ НА ВАШИ ВОПРОСЫ</h2>
-      <div>
-        <div>Будет ли дресс-код?</div>
-        <div>
-          Мы будем рады, если девушки выберут вечерние или
-          коктейльные платья в пастельных тонах, а мужчины — костюм.
+      <h3 className={styles.title}>
+        ОТВЕЧАЕМ НА ВАШИ ВОПРОСЫ
+      </h3>
+      <div className={styles.questions_container}>
+        <div className={styles.dresscode}>
+          <div className={styles.question}>Будет ли дресс-код?</div>
+          <div className={styles.answer}>
+            Мы будем рады, если девушки выберут вечерние или
+            коктейльные платья в пастельных тонах, а мужчины — костюм.
+          </div>
+          <div className={styles.colors_container}>
+            <div className={styles.color} />
+            <div className={styles.color} />
+            <div className={styles.color} />
+            <div className={styles.color} />
+          </div>
         </div>
-      </div>
-      <div>
-        <div>Нужно ли дарить цветы?</div>
         <div>
-          Просим вас не дарить цветы, так как на следующий день мы улетаем в свадебное путешествие
-          и не успеем насладиться красивыми букетами.
+          <div className={styles.question}>Нужно ли дарить цветы?</div>
+          <div className={styles.answer}>
+            Просим вас не дарить цветы, но будем рады вкладу в бюджет нашего свадебного путешествия.
+          </div>
         </div>
-      </div>
-      <div>
-        <div>Возможно ли приехать на своем автомобиле?</div>
         <div>
-          Да, на территории отеля имеется парковка. Для бронирования
-          места просим заранее сообщить марку и номер автомобиля.
-        </div>
-      </div>
-      <div>
-        <div>Кому можно задать вопросы по организации мероприятия?</div>
-        <div>
-          Наш свадебный организатор — Елена с радостью ответит на ваши вопросы.
-          Ее номер телефона: +7 (ххх) ххх-хх-хх.
+          <div className={styles.question}>
+            Кому можно задать вопросы по организации мероприятия?
+          </div>
+          <div className={styles.answer}>
+            Наш свадебный организатор — Анастасия с радостью ответит на ваши вопросы.
+            Ее номер телефона: +7 (916) 423-90-83.
+          </div>
         </div>
       </div>
     </div>

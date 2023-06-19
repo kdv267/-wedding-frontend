@@ -1,0 +1,58 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3%;
+    height: 110vh;
+    border: 1px solid black;
+    padding: 3%;
+}
+
+.title {
+    margin-top: 13%;
+    white-space: nowrap;
+    color: rgb(128, 177, 128);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.questions_container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.dresscode {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.question {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.answer {
+    font-size: 14px;
+}
+
+.colors_container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 18px;
+    width: 80%;
+    align-self: center;
+    height: 0;
+    padding-bottom: 20%;
+}
+
+.color {
+    background-color: beige;
+    height: 100%;
+    width: 20%;
+    padding-bottom: 20%;
+    border-radius: 50%;
+}
