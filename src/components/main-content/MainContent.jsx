@@ -2,9 +2,9 @@ import React from 'react';
 import Countdown from './Countdown';
 import styles from './MainContent.module.scss';
 
-export default function MainContent() {
+export default function MainContent({ mainContentRef }) {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={mainContentRef}>
       <div className={styles.names}>
         Дмитрий
         <div className={styles.heart} />
