@@ -1,10 +1,12 @@
 import React from 'react';
 
-export default function Questions() {
+export default function Questions({ questionsRef }) {
   return (
-    <div style={{
-      display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3%', height: '100vh', border: '1px solid black',
-    }}
+    <div
+      style={{
+        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3%', height: '100vh', border: '1px solid black',
+      }}
+      ref={questionsRef}
     >
       <h2>ОТВЕЧАЕМ НА ВАШИ ВОПРОСЫ</h2>
       <div>
