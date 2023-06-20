@@ -1,14 +1,32 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
+import styles from './Program.module.scss';
 
 export default function Program({ programRef }) {
   return (
     <div
-      style={{
-        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3%', height: '100vh', border: '1px solid black',
-      }}
+      className={styles.container}
       ref={programRef}
     >
-      Программа мероприятия
+      <h3 className={styles.title}>ПРОГРАММА СВАДЕБНОГО ДНЯ</h3>
+      <div className={styles.action_container}>
+        <div className={styles.action}>
+          <h3 className={styles.time}>14:00</h3>
+          <div>Сбор гостей, свадебный фуршет</div>
+        </div>
+        <div className={styles.action}>
+          <h3 className={styles.time}>15:00</h3>
+          <div>Свадебная церемония</div>
+        </div>
+        <div className={styles.action}>
+          <h3 className={styles.time}>16:00</h3>
+          <div>Свадебный ужин</div>
+        </div>
+        <div className={styles.action}>
+          <h3 className={styles.time}>23:00</h3>
+          <div>"Блистательное" окончание вечера</div>
+        </div>
+      </div>
     </div>
   );
 }
