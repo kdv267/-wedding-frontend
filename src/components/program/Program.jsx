@@ -8,6 +8,13 @@ export default function Program({ programRef }) {
       className={styles.container}
       ref={programRef}
     >
+      <img
+        src="/heart1.jpeg"
+        alt="heart"
+        style={{
+          zIndex: '-20', position: 'absolute', width: '150px', height: '150px', right: '35%',
+        }}
+      />
       <h3 className={styles.title}>ПРОГРАММА СВАДЕБНОГО ДНЯ</h3>
       <div className={styles.action_container}>
         <div className={styles.action}>
