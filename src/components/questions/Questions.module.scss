@@ -3,16 +3,21 @@
     flex-direction: column;
     align-items: center;
     gap: 3%;
-    border: 1px solid black;
+    border: 0.5px solid gray;
     padding: 3%;
 }
 
 .title {
     margin-top: 13%;
+    margin-bottom: 5%;
     white-space: nowrap;
     color: rgb(128, 177, 128);
     font-weight: bold;
     font-size: 20px;
+
+    @media (min-width: 600px) {
+    margin-top: 5%;
+    }
 }
 
 .questions_container {
@@ -46,6 +51,11 @@
     align-self: center;
     height: 0;
     padding-bottom: 20%;
+
+    @media (min-width: 600px) {
+        width: 60%;
+        padding-bottom: 15%;
+    }
 }
 
 .color {

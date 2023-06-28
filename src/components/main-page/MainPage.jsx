@@ -11,6 +11,8 @@ import Form from '../form/Form';
 import Program from '../program/Program';
 import Map from '../map/Map';
 
+import styles from './MainPage.module.scss';
+
 function MainPage() {
   const inviteRef = useRef(null);
   const aboutUsRef = useRef(null);
@@ -39,16 +41,18 @@ function MainPage() {
 
   return (
     <div>
-      <Header
-        inviteRef={inviteRef}
-        aboutUsRef={aboutUsRef}
-        questionsRef={questionsRef}
-        mainContentRef={mainContentRef}
-        formRef={formRef}
-        programRef={programRef}
-        mapRef={mapRef}
-      />
-      <MainContent mainContentRef={mainContentRef} />
+      <div className={styles.container}>
+        <Header
+          inviteRef={inviteRef}
+          aboutUsRef={aboutUsRef}
+          questionsRef={questionsRef}
+          mainContentRef={mainContentRef}
+          formRef={formRef}
+          programRef={programRef}
+          mapRef={mapRef}
+        />
+        <MainContent mainContentRef={mainContentRef} />
+      </div>
       <Invite inviteRef={inviteRef} guests={guests} />
       <AboutUs aboutUsRef={aboutUsRef} />
       <Questions questionsRef={questionsRef} />

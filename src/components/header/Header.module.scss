@@ -7,7 +7,8 @@
     max-width: 100%;
     height: 60px;
     list-style-type: none;
-    color: gray;
+    color: white;
+    background-color: transparent;
 }
 
 .fixed {
@@ -18,6 +19,23 @@
     background-color: white;
 }
 
+.fixed * {
+    color: gray;
+}
+
 .item {
     cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: rgb(201, 240, 212);
+        transform: scale(1.1);
+    }
+}
+
+.fixed .item {
+    &:hover {
+        color: rgb(48, 61, 52);
+        transform: scale(1.1);
+    }
 }
