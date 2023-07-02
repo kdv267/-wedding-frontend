@@ -1,17 +1,17 @@
+/* eslint-disable object-curly-newline */
 import React, { useEffect } from 'react';
-import {
-  Form, Checkbox, Button, Input, notification,
-} from 'antd';
+import { Form, Checkbox, Button, Input, notification } from 'antd';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import styles from './Form.module.scss';
 
 const filterData = (data) => {
-  const {
-    drink, food, music, comment,
-  } = data;
+  const { drink, food, music, comment } = data;
   return {
-    drink, food, music, comment,
+    drink,
+    food,
+    music,
+    comment,
   };
 };
 
@@ -53,44 +53,68 @@ export default function MyForm({ formRef }) {
   };
 
   return (
-    <div
-      className={styles.myForm}
-      ref={formRef}
-    >
+    <div className={styles.myForm} ref={formRef}>
       <Form form={form} name="myForm" layout="vertical" onFinish={onFinish}>
-        <p>Что предпочитаете на горячее?</p>
-        <Form.Item name="food">
-          <Checkbox.Group direction="vertical">
-            <Checkbox value="beef">Телятина</Checkbox>
-            <Checkbox value="chicken">Птица</Checkbox>
-            <Checkbox value="fish">Рыба</Checkbox>
-            <Checkbox value="vegetable">Овощи</Checkbox>
+        <p className={styles.question_title}>Что предпочитаете на горячее?</p>
+        <Form.Item className={styles.food} name="food">
+          <Checkbox.Group className={styles.food_group} direction="vertical">
+            <Checkbox className={styles.food_element} value="beef">
+              Телятина
+            </Checkbox>
+            <Checkbox className={styles.food_element} value="chicken">
+              Птица
+            </Checkbox>
+            <Checkbox className={styles.food_element} value="fish">
+              Рыба
+            </Checkbox>
+            <Checkbox className={styles.food_element} value="vegetable">
+              Овощи
+            </Checkbox>
           </Checkbox.Group>
         </Form.Item>
 
-        <p>Что предпочитаете из горячительного?</p>
-        <Form.Item name="drink">
-          <Checkbox.Group direction="vertical">
-            <Checkbox value="champagne">Игристое</Checkbox>
-            <Checkbox value="wineWhite">Вино белое</Checkbox>
-            <Checkbox value="wineRed">Вино красное</Checkbox>
-            <Checkbox value="cognac">Коньяк</Checkbox>
-            <Checkbox value="wisky">Виски</Checkbox>
-            <Checkbox value="beer">Пиво</Checkbox>
+        <p className={styles.question_title}>
+          Что предпочитаете из горячительного?
+        </p>
+        <Form.Item className={styles.drink} name="drink">
+          <Checkbox.Group className={styles.drink_group} direction="vertical">
+            <Checkbox className={styles.drink_element} value="champagne">
+              Игристое
+            </Checkbox>
+            <Checkbox className={styles.drink_element} value="wineWhite">
+              Вино белое
+            </Checkbox>
+            <Checkbox className={styles.drink_element} value="wineRed">
+              Вино красное
+            </Checkbox>
+            <Checkbox className={styles.drink_element} value="cognac">
+              Коньяк
+            </Checkbox>
+            <Checkbox className={styles.drink_element} value="wisky">
+              Виски
+            </Checkbox>
+            <Checkbox className={styles.drink_element} value="beer">
+              Пиво
+            </Checkbox>
           </Checkbox.Group>
         </Form.Item>
 
-        <p>Любимая песня/исполнитель</p>
+        <p className={styles.question_title}>Любимая песня/исполнитель</p>
         <Form.Item name="music">
-          <Input placeholder="Input field 1" />
+          <Input placeholder="Можно и несколько!" />
         </Form.Item>
 
-        <p>Дополнительная информация</p>
+        <p className={styles.question_title}>Дополнительная информация</p>
         <Form.Item name="comment">
-          <Input placeholder="Input field 2" />
+          <Input.TextArea placeholder="Все что угодно" />
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button
+            size="large"
+            className={styles.buttonSave}
+            type="primary"
+            htmlType="submit"
+          >
             Сохранить
           </Button>
         </Form.Item>

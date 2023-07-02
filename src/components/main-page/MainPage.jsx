@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { ConfigProvider } from 'antd';
 import Header from '../header/Header';
 import MainContent from '../main-content/MainContent';
 import Invite from '../invite/Invite';
@@ -41,24 +42,32 @@ function MainPage() {
 
   return (
     <div>
-      <div className={styles.container}>
-        <Header
-          inviteRef={inviteRef}
-          aboutUsRef={aboutUsRef}
-          questionsRef={questionsRef}
-          mainContentRef={mainContentRef}
-          formRef={formRef}
-          programRef={programRef}
-          mapRef={mapRef}
-        />
-        <MainContent mainContentRef={mainContentRef} />
-      </div>
-      <Invite inviteRef={inviteRef} guests={guests} />
-      <AboutUs aboutUsRef={aboutUsRef} />
-      <Questions questionsRef={questionsRef} />
-      <Form formRef={formRef} guests={guests} />
-      <Program programRef={programRef} />
-      <Map mapRef={mapRef} />
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: '#80b180',
+          },
+        }}
+      >
+        <div className={styles.container}>
+          <Header
+            inviteRef={inviteRef}
+            aboutUsRef={aboutUsRef}
+            questionsRef={questionsRef}
+            mainContentRef={mainContentRef}
+            formRef={formRef}
+            programRef={programRef}
+            mapRef={mapRef}
+          />
+          <MainContent mainContentRef={mainContentRef} />
+        </div>
+        <Invite inviteRef={inviteRef} guests={guests} />
+        <AboutUs aboutUsRef={aboutUsRef} />
+        <Questions questionsRef={questionsRef} />
+        <Form formRef={formRef} guests={guests} />
+        <Program programRef={programRef} />
+        <Map mapRef={mapRef} />
+      </ConfigProvider>
     </div>
   );
 }

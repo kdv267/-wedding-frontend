@@ -7,4 +7,18 @@
     justify-content: center;
     text-align: center;
     border-top: 0.5px solid gray;
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center ;
+
+      .buttonAccept{
+        margin-top: 20px;
+      }
+
+      .buttonReject{
+        margin-top: 20px;
+      }
+    }
 }
