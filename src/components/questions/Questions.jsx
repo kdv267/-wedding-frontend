@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import styles from './Questions.module.scss';
 
@@ -14,14 +15,7 @@ export default function Questions({ questionsRef }) {
         <div className={styles.dresscode}>
           <div className={styles.question}>Будет ли дресс-код?</div>
           <div className={styles.answer}>
-            Мы будем рады, если девушки выберут вечерние или
-            коктейльные платья в пастельных тонах, а мужчины — костюм.
-          </div>
-          <div className={styles.colors_container}>
-            <div className={styles.color} />
-            <div className={styles.color} />
-            <div className={styles.color} />
-            <div className={styles.color} />
+            Мы хотим, чтобы вы наслаждались нашим особенным днем и не тратили время на сложности с выбором наряда. Поэтому нет строгого дресс-кода - просто приходите в удобной вечерней одежде пастельных тонов, в которой вы чувствуете себя комфортно. Мы хотим, чтобы вы отдохнули и насладились вечером вместе с нами.
           </div>
         </div>
         <div>

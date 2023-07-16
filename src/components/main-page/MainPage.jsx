@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useState } from 'react';
 
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { redirect, useParams, useNavigate } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
 import Header from '../header/Header';
 import MainContent from '../main-content/MainContent';
@@ -26,14 +27,20 @@ function MainPage() {
   const [guests, setGuests] = useState(null);
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5002/${id}`);
-        setGuests(response.data);
+        const response = await axios.get(`http://91.220.109.100:5002/${id}`);
+        if (response.data) {
+          setGuests(response.data);
+        } else {
+          navigate('/');
+        }
       } catch (error) {
         console.error('Ошибка при получении данных: ', error);
+        navigate('/');
       }
     };
 
@@ -61,8 +68,7 @@ function MainPage() {
           />
           <MainContent mainContentRef={mainContentRef} />
         </div>
-        <Invite inviteRef={inviteRef} guests={guests} />
-        <AboutUs aboutUsRef={aboutUsRef} />
+        <AboutUs guests={guests} aboutUsRef={aboutUsRef} />
         <Questions questionsRef={questionsRef} />
         <Form formRef={formRef} guests={guests} />
         <Program programRef={programRef} />

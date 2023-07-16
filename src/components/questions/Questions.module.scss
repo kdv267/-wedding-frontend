@@ -2,9 +2,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 3%;
-    border: 0.5px solid gray;
-    padding: 3%;
+    max-width: 60%;
+    margin: 0 auto;
+    width: 100%;
+    line-height: 1.6;
+
+    @media (max-width: 1250px) {
+      max-width: 80%;
+    }
+
+    @media (max-width: 720px) {
+      max-width: 80%;
+    }
+
 }
 
 .title {
@@ -13,34 +25,63 @@
     white-space: nowrap;
     color: rgb(128, 177, 128);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
 
-    @media (min-width: 600px) {
-    margin-top: 5%;
+    @media (max-width: 1250px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 720px) {
+      font-size: 20px;
     }
 }
 
 .questions_container {
-    width: 80%;
     display: flex;
     flex-direction: column;
     gap: 18px;
+    text-align: center;
+    @media (max-width: 1250px) {
+      width: 100%;
+    }
+
+    @media (max-width: 720px) {
+      width: 100%;
+    }
 }
 
 .dresscode {
+  text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
 }
 
 .question {
+
+  text-align: center;
     font-weight: bold;
     font-size: 20px;
+    @media (max-width: 1250px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 720px) {
+      font-size: 16px;
+    }
 }
 
 .answer {
-    font-size: 14px;
+  margin-top: 8px;
+    font-size: 16px;
+      margin-bottom: 20px;
+      @media (max-width: 1250px) {
+        font-size: 14px;
+      }
+
+      @media (max-width: 720px) {
+        font-size: 14px;
+      }
 }
 
 .colors_container {

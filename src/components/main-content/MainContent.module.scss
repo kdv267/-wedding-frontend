@@ -1,44 +1,69 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 3%;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+  align-items: center;
+  justify-content: center;
+  height: 94vh;
+  position: relative;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  top: 17%;
+}
+
+@media (max-width: 600px) {
+.textBlock {
+  position: static;
+}
 }
 
 .heart {
-    background-image: url('../../../public/somehearts.png');
-    width: 70px;
-    height: 70px;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url('../../../public/somehearts.png');
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .names {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-family: 'Caveat', cursive;
-    font-size: 40px;
-    font-weight: 700;
-    color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Caveat', cursive;
+  font-size: 50px;
+  font-weight: 700;
+  color: rgb(246, 116, 125);
+  @media (max-width: 1250px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 30px;
+  }
+
 }
 
 .date {
-    color: white;
+  font-family: 'Caveat', cursive;
+color: rgb(246, 116, 125);
+font-size: 30px;
+font-weight: 700;
 }
 
 .countdown {
-    bottom: 0px; 
-    position: absolute;
-    background-color: white;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 22%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+  bottom: 0px;
+  position: absolute;
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 22%;
+  margin: 10px;
+  border-radius: 15px;
 }
