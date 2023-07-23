@@ -4,9 +4,10 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.scss';
+import { SERVER_URL } from './constants';
 
-axios.defaults.baseURL = 'http://localhost:3001';
-axios.defaults.withCredentials = true;
+axios.defaults.baseURL = SERVER_URL;
+axios.defaults.withCredentials = false;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

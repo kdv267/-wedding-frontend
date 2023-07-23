@@ -1,9 +1,11 @@
+/* eslint-disable no-console */
 /* eslint-disable object-curly-newline */
 import React, { useEffect } from 'react';
 import { Form, Checkbox, Button, Input, notification } from 'antd';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import styles from './Form.module.scss';
+import { SERVER_URL } from '../../constants';
 
 const filterData = (data) => {
   const { drink, food, music, comment } = data;
@@ -23,7 +25,7 @@ export default function MyForm({ formRef }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://91.220.109.100:5002/${id}`);
+        const response = await axios.get(`${SERVER_URL}/${id}`);
         const filteredData = filterData(response.data);
         form.setFieldsValue(filteredData);
       } catch (error) {
@@ -36,7 +38,7 @@ export default function MyForm({ formRef }) {
 
   const onFinish = async (values) => {
     try {
-      await axios.put(`http://91.220.109.100:5002/${id}`, values);
+      await axios.put(`${SERVER_URL}/${id}`, values);
       notification.success({
         message: 'Спасибо',
         description: 'Данные успешно сохранены!',

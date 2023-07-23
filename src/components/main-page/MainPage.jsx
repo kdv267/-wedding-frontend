@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
 import React, { useEffect, useRef, useState } from 'react';
 
 import axios from 'axios';
@@ -14,6 +15,7 @@ import Program from '../program/Program';
 import Map from '../map/Map';
 
 import styles from './MainPage.module.scss';
+import { SERVER_URL } from '../../constants';
 
 function MainPage() {
   const inviteRef = useRef(null);
@@ -32,7 +34,7 @@ function MainPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://91.220.109.100:5002/${id}`);
+        const response = await axios.get(`${SERVER_URL}/${id}`);
         if (response.data) {
           setGuests(response.data);
         } else {

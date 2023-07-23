@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable no-nested-ternary */
+/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 import {
   Button, notification,
@@ -7,6 +8,7 @@ import {
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import styles from './Invite.module.scss';
+import { SERVER_URL } from '../../constants';
 
 export default function Invite({ inviteRef, guests }) {
   const { id } = useParams();
@@ -18,7 +20,7 @@ export default function Invite({ inviteRef, guests }) {
 
   const accepInvitation = async () => {
     try {
-      await axios.put(`http://91.220.109.100:5002/${id}`, { is_confirmed: true });
+      await axios.put(`${SERVER_URL}/${id}`, { is_confirmed: true });
       notification.success({
         message: 'Спасибо',
         description: 'Данные успешно сохранены!',
@@ -37,7 +39,7 @@ export default function Invite({ inviteRef, guests }) {
 
   const declineInvitation = async () => {
     try {
-      await axios.put(`http://91.220.109.100:5002/${id}`, { is_confirmed: false });
+      await axios.put(`${SERVER_URL}/${id}`, { is_confirmed: false });
       notification.success({
         message: 'Спасибо',
         description: 'Данные успешно сохранены!',
